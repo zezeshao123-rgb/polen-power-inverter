@@ -258,6 +258,17 @@ footer{background:#0d0d0d;padding:56px 24px 24px}
   .stats-in{grid-template-columns:repeat(2,1fr)}
   .logo-brand{font-size:1.3rem}
 }
+/* ── Lightbox ── */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:10000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.25s;cursor:zoom-out;backdrop-filter:blur(4px)}
+#lightbox.show{opacity:1;visibility:visible}
+#lightbox img{max-width:88vw;max-height:82vh;object-fit:contain;border-radius:14px;box-shadow:0 24px 80px rgba(0,0,0,.5);transform:scale(.92);transition:.28s cubic-bezier(.34,1.56,.64,1)}
+#lightbox.show img{transform:scale(1)}
+#lb-close{position:absolute;top:20px;right:24px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;line-height:1}
+#lb-close:hover{background:rgba(255,255,255,.3)}
+#lb-caption{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#fff;font-size:.88rem;font-weight:600;background:rgba(0,0,0,.45);padding:7px 20px;border-radius:99px;white-space:nowrap;opacity:0;transition:.3s .1s}
+#lightbox.show #lb-caption{opacity:1}
+.pt img{cursor:zoom-in}
+.model-detail-img{cursor:zoom-in}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -642,6 +653,13 @@ footer{background:#0d0d0d;padding:56px 24px 24px}
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lb-close">✕</button>
+  <img id="lb-img" src="" alt=""/>
+  <div id="lb-caption"></div>
+</div>
+
 <script src="i18n.js"></script>
 <script>
 /* ── Language ── */
@@ -867,6 +885,34 @@ function submitForm(e) {
       btn.textContent = (I18N[lang] && I18N[lang]['cf.submit']) || 'Send Inquiry →';
     });
 }
+
+/* ── Lightbox ── */
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+const lbCap = document.getElementById('lb-caption');
+
+function openLightbox(src, caption) {
+  lbImg.src = src;
+  lbCap.textContent = caption || '';
+  lb.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lb.classList.remove('show');
+  document.body.style.overflow = '';
+  setTimeout(() => { lbImg.src = ''; }, 300);
+}
+lb.addEventListener('click', closeLightbox);
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// 点击产品卡片主图
+document.addEventListener('click', e => {
+  const ptImg = e.target.closest('.pt img');
+  if (ptImg) { e.stopPropagation(); openLightbox(ptImg.src, ptImg.closest('.pc')?.querySelector('.pn')?.textContent); return; }
+  const mdImg = e.target.closest('.model-detail-img');
+  if (mdImg) { e.stopPropagation(); openLightbox(mdImg.src, mdImg.closest('.model-item')?.querySelector('.model-no')?.textContent); return; }
+});
 
 /* Init */
 applyLang('en');

@@ -14,11 +14,11 @@ const PRODUCTS = [
     desc: { en: "Standard pure sine wave, THD <3%, compatible with all inductive and capacitive loads.", zh: "标准纯正弦波输出，THD <3%，可驱动所有感性和容性负载。" },
     tags: ["Pure Sine Wave", "THD <3%", "IP65"],
     models: [
-      { model: "PS-S800", power: "800W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-s-800.jpg" },
-      { model: "PS-S1000", power: "1000W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-s-1000.jpg" },
-      { model: "PS-S1200", power: "1200W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-s-1200.jpg" },
-      { model: "PS-S2000", power: "2000W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-s-2000.jpg" },
-      { model: "PS-S3000", power: "3000W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-s-3000.jpg" },
+      { model: "PS-S800",  power: "800W",   input: "12V/24V DC",  output: "220V AC / 50Hz", img: "images/ps-s-800.jpg" },
+      { model: "PS-S1000", power: "1000W",  input: "12V/24V DC",  output: "220V AC / 50Hz", img: "images/ps-s-1000.jpg" },
+      { model: "PS-S1200", power: "1200W",  input: "12V/24V DC",  output: "220V AC / 50Hz", img: "images/ps-s-1200.jpg" },
+      { model: "PS-S2000", power: "2000W",  input: "12V/24V DC",  output: "220V AC / 50Hz", img: "images/ps-s-2000.jpg" },
+      { model: "PS-S3000", power: "3000W",  input: "12V/24V DC",  output: "220V AC / 50Hz", img: "images/ps-s-3000.jpg" },
     ]
   },
   {
@@ -30,11 +30,11 @@ const PRODUCTS = [
     desc: { en: "All-in-one with built-in charger, auto-switch <20ms on power failure.", zh: "集逆变、充电、UPS于一体，断电<20ms毫秒级切换。" },
     tags: ["Pure Sine Wave", "Built-in Charger", "UPS <20ms"],
     models: [
-      { model: "PS-U1000", power: "1000W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-u-1000.jpg" },
-      { model: "PS-U2000", power: "2000W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-u-2000.jpg" },
-      { model: "PS-U1000n", power: "1000W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-u-1000n.jpg" },
-      { model: "PS-U2000n", power: "2000W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-u-2000n.jpg" },
-      { model: "PS-U3000n", power: "3000W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-u-3000n.jpg" },
+      { model: "PS-U1000", power: "1000W",  input: "12V/24V DC",  output: "220V AC / 50Hz", img: "images/ps-u-1000.jpg" },
+      { model: "PS-U2000", power: "2000W",  input: "12V/24V DC",  output: "220V AC / 50Hz", img: "images/ps-u-2000.jpg" },
+      { model: "PS-U1000n", power: "1000W", input: "12V/24V DC",  output: "220V AC / 50Hz", img: "images/ps-u-1000n.jpg" },
+      { model: "PS-U2000n", power: "2000W", input: "12V/24V DC",  output: "220V AC / 50Hz", img: "images/ps-u-2000n.jpg" },
+      { model: "PS-U3000n", power: "3000W", input: "12V/24V DC",  output: "220V AC / 50Hz", img: "images/ps-u-3000n.jpg" },
     ]
   },
   {
@@ -46,8 +46,8 @@ const PRODUCTS = [
     desc: { en: "Integrated MPPT controller maximizes PV harvest for off-grid systems.", zh: "内置MPPT控制器，自动追踪光伏最大功率点，专为离网系统设计。" },
     tags: ["Pure Sine Wave", "MPPT Controller", "Wide PV Input"],
     models: [
-      { model: "PS-M1000", power: "1000W", input: "12V DC / PV≤50V", output: "220V AC / 50Hz", img: "images/ps-m-1000.jpg" },
-      { model: "PS-M1500", power: "1500W", input: "12V DC / PV≤50V", output: "220V AC / 50Hz", img: "images/ps-m-1500.jpg" },
+      { model: "PS-M1000", power: "1000W",  input: "12V DC / PV≤50V",  output: "220V AC / 50Hz", img: "images/ps-m-1000.jpg" },
+      { model: "PS-M1500", power: "1500W",  input: "12V DC / PV≤50V",  output: "220V AC / 50Hz", img: "images/ps-m-1500.jpg" },
     ]
   },
   {
@@ -59,7 +59,7 @@ const PRODUCTS = [
     desc: { en: "Cost-effective modified sine wave, compact, for resistive loads.", zh: "修正正弦波输出，成本低，体积小，适用于阻性负载。" },
     tags: ["Modified Wave", "Economical", "Compact"],
     models: [
-      { model: "PS-R600", power: "600W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-r-600.jpg" },
+      { model: "PS-R600",  power: "600W",  input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-r-600.jpg" },
       { model: "PS-R2000", power: "2000W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-r-2000.jpg" },
       { model: "PS-R3000", power: "3000W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-r-3000.jpg" },
       { model: "PS-R4000", power: "4000W", input: "12V/24V DC", output: "220V AC / 50Hz", img: "images/ps-r-4000.jpg" },
@@ -76,8 +76,8 @@ const PRODUCTS = [
     desc: { en: "Modified sine wave with integrated MPPT solar controller, cost-effective for basic off-grid PV applications.", zh: "修正波逆变器内置MPPT太阳能充电控制器，经济实用，适合基础离网光伏应用。" },
     tags: ["Modified Wave", "MPPT Controller", "Economical"],
     models: [
-      { model: "PS-RM1000", power: "1000W", input: "12V DC / PV≤60V", output: "220V AC / 50Hz", img: "images/ps-rm-1000.jpg" },
-      { model: "PS-RM2000", power: "2000W", input: "12V DC / PV≤120V", output: "220V AC / 50Hz", img: "images/ps-rm-2000.jpg" },
+      { model: "PS-RM1000", power: "1000W", input: "12V DC / PV≤60V",  output: "220V AC / 50Hz", img: "images/ps-rm-1000.jpg" },
+      { model: "PS-RM2000", power: "2000W", input: "12V DC / PV≤120V",  output: "220V AC / 50Hz", img: "images/ps-rm-2000.jpg" },
       { model: "PS-RM3000", power: "3000W", input: "12V DC / PV≤120V", output: "220V AC / 50Hz", img: "images/ps-rm-3000.jpg" },
     ]
   },
@@ -90,11 +90,11 @@ const PRODUCTS = [
     desc: { en: "Multi-stage intelligent charging for lead-acid batteries, extends battery life and improves charge efficiency.", zh: "多阶段智能充电，有效修复和延长铅酸蓄电池寿命，适用于各类铅酸电池。" },
     tags: ["Lead-Acid", "Multi-Stage", "Auto Charging"],
     models: [
-      { model: "PS-C10A", power: "10A", input: "220V AC / 50Hz", output: "Charge 12V/24V Battery", img: "images/ps-c-10a.jpg" },
-      { model: "PS-C20A", power: "20A", input: "220V AC / 50Hz", output: "Charge 12V/24V Battery", img: "images/ps-c-20a.jpg" },
-      { model: "PS-C30A", power: "30A", input: "220V AC / 50Hz", output: "Charge 12V/24V/48V Battery", img: "images/ps-c-30a.jpg" },
-      { model: "PS-C40A", power: "40A", input: "220V AC / 50Hz", output: "Charge 12V/24V/48V Battery", img: "images/ps-c-40a.jpg" },
-      { model: "PS-C50A", power: "50A", input: "220V AC / 50Hz", output: "Charge 12V/24V/48V Battery", img: "images/ps-c-50a.jpg" },
+      { model: "PS-C10A",  power: "10A",  input: "220V AC / 50Hz", output: "Charge 12V/24V Battery", img: "images/ps-c-10a.jpg" },
+      { model: "PS-C20A",  power: "20A",  input: "220V AC / 50Hz", output: "Charge 12V/24V Battery", img: "images/ps-c-20a.jpg" },
+      { model: "PS-C30A",  power: "30A",  input: "220V AC / 50Hz", output: "Charge 12V/24V/48V Battery", img: "images/ps-c-30a.jpg" },
+      { model: "PS-C40A",  power: "40A",  input: "220V AC / 50Hz", output: "Charge 12V/24V/48V Battery", img: "images/ps-c-40a.jpg" },
+      { model: "PS-C50A",  power: "50A",  input: "220V AC / 50Hz", output: "Charge 12V/24V/48V Battery", img: "images/ps-c-50a.jpg" },
     ]
   }
 ];
