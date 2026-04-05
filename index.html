@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Polen Power Inverter | Professional Inverter Manufacturer</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:#1c2b3a;background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+:root{
+  --pri:#cc0000;--pri-dark:#a00000;--pri-light:#fff0f0;
+  --acc:#333333;--dark:#1a1a1a;--gray:#64748b;
+  --light:#f8fafc;--border:#e2e8f0;--r:10px;
+  --shadow:0 2px 16px rgba(0,0,0,0.08);
+}
+
+/* TOP BAR */
+.topbar{background:#1a1a1a;color:rgba(255,255,255,.7);font-size:.78rem;padding:0 24px;height:34px;display:flex;align-items:center;justify-content:space-between}
+.tb-left{display:flex;align-items:center;gap:20px}
+.tb-left span{display:flex;align-items:center;gap:5px}
+.tb-left svg{width:12px;height:12px;flex-shrink:0}
+.lang-btn{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:3px 12px;border-radius:20px;font-size:.75rem;font-weight:700;cursor:pointer;transition:.2s}
+.lang-btn:hover{background:var(--pri)}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:900;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 1px 8px rgba(0,0,0,.06)}
+nav{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:68px}
+
+/* LOGO */
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo-icon{width:40px;height:40px;flex-shrink:0}
+.logo-text-group{display:flex;flex-direction:column;line-height:1;gap:3px}
+.logo-brand{font-size:1.6rem;font-weight:900;color:#222;letter-spacing:.5px;font-family:'Arial Black','Segoe UI',sans-serif;position:relative;display:inline-block}
+.logo-brand em{font-style:normal;position:relative}
+.logo-brand em::after{content:'';position:absolute;left:0;bottom:-1px;width:100%;height:3px;background:var(--pri);border-radius:2px}
+.logo-tagline{font-size:.58rem;font-weight:700;color:#888;letter-spacing:3px;text-transform:uppercase}
+
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:7px 14px;border-radius:7px;font-size:.88rem;font-weight:600;color:#374151;transition:.2s}
+.nav-links>li>a:hover,.nav-links>li>a.act{color:var(--pri);background:var(--pri-light)}
+.drop{position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:var(--r);box-shadow:0 8px 28px rgba(0,0,0,.11);min-width:240px;padding:6px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s;pointer-events:none}
+.nav-links>li:hover .drop{opacity:1;visibility:visible;transform:translateY(0);pointer-events:all}
+.drop a{display:flex;align-items:center;gap:9px;padding:8px 11px;border-radius:7px;font-size:.84rem;font-weight:500;color:#374151;transition:.15s}
+.drop a:hover{background:var(--pri-light);color:var(--pri)}
+.drop-dot{width:7px;height:7px;border-radius:50%;background:var(--pri);opacity:.55;flex-shrink:0}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.btn-inq{background:var(--pri);color:#fff;padding:8px 20px;border-radius:8px;font-size:.85rem;font-weight:700;border:none;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:6px}
+.btn-inq:hover{background:var(--pri-dark);transform:translateY(-1px);box-shadow:0 4px 14px rgba(200,0,0,.35)}
+.hmb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+.hmb span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:.3s}
+
+/* MOBILE MENU */
+.mob-menu{display:none;position:fixed;inset:0;background:#fff;z-index:800;padding:90px 24px 40px;flex-direction:column;gap:8px;overflow-y:auto}
+.mob-menu.open{display:flex}
+.mob-menu a{display:block;padding:13px 16px;border-radius:9px;font-size:1rem;font-weight:600;color:#374151;border-bottom:1px solid var(--border)}
+.mob-menu a:hover{background:var(--pri-light);color:var(--pri)}
+
+/* HERO */
+.hero{background:linear-gradient(120deg,#111 0%,#1e1e1e 50%,#0d0d0d 100%);min-height:560px;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-80px;top:-100px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(204,0,0,.15) 0%,transparent 65%)}
+.hero::after{content:'';position:absolute;left:30%;bottom:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 65%)}
+.hero-in{max-width:1280px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(204,0,0,.15);border:1px solid rgba(204,0,0,.3);color:#ff4444;font-size:.75rem;font-weight:700;padding:5px 13px;border-radius:99px;margin-bottom:18px;letter-spacing:.8px;text-transform:uppercase}
+.hero h1{font-size:clamp(1.9rem,3.2vw,2.9rem);font-weight:900;color:#fff;line-height:1.18;margin-bottom:18px;letter-spacing:-.4px}
+.hero h1 em{color:#cc0000;font-style:normal}
+.hero-desc{font-size:.97rem;color:rgba(255,255,255,.62);margin-bottom:34px;max-width:460px;line-height:1.78}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+.btn-h1{background:var(--pri);color:#fff;padding:12px 26px;border-radius:8px;font-size:.92rem;font-weight:700;border:none;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;gap:7px}
+.btn-h1:hover{background:var(--pri-dark);transform:translateY(-2px);box-shadow:0 8px 22px rgba(200,0,0,.4)}
+.btn-h2{background:transparent;color:#fff;padding:12px 26px;border-radius:8px;font-size:.92rem;font-weight:600;border:1.5px solid rgba(255,255,255,.28);cursor:pointer;transition:.25s;display:inline-flex;align-items:center;gap:7px}
+.btn-h2:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hero-kpis{display:flex;gap:36px;flex-wrap:wrap}
+.kpi-n{font-size:1.9rem;font-weight:900;color:#fff;line-height:1}
+.kpi-n span{color:#cc0000}
+.kpi-l{font-size:.74rem;color:rgba(255,255,255,.42);margin-top:3px}
+.hero-vis{display:flex;justify-content:center;align-items:center}
+.device-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:32px 40px;backdrop-filter:blur(8px);animation:flt 4s ease-in-out infinite;text-align:center}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.device-screen{width:210px;height:130px;background:#080808;border-radius:10px;border:1px solid rgba(255,255,255,.07);margin:0 auto 18px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.device-screen svg{width:100%;height:100%}
+.device-stats{display:flex;justify-content:space-between;gap:14px}
+.ds-val{font-size:1.05rem;font-weight:800;color:#cc0000}
+.ds-key{font-size:.66rem;color:rgba(255,255,255,.4);margin-top:2px}
+
+/* SECTIONS */
+section{padding:84px 24px}
+.si{max-width:1280px;margin:0 auto}
+.sec-tag{display:inline-flex;align-items:center;gap:8px;color:var(--pri);font-size:.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+.sec-tag::before{content:'';width:18px;height:2px;background:var(--pri);border-radius:2px}
+.sec-h{font-size:clamp(1.65rem,2.6vw,2.3rem);font-weight:800;color:var(--dark);line-height:1.22;margin-bottom:12px}
+.sec-d{font-size:.96rem;color:var(--gray);max-width:540px;line-height:1.75}
+.sh{margin-bottom:48px}
+.sh.c{text-align:center}
+.sh.c .sec-d{margin:0 auto}
+
+/* PRODUCTS */
+#products{background:var(--light)}
+.cat-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.cat-btn{padding:7px 18px;border-radius:99px;border:1.5px solid var(--border);font-size:.82rem;font-weight:600;color:var(--gray);cursor:pointer;background:#fff;transition:.2s}
+.cat-btn:hover{border-color:var(--pri);color:var(--pri)}
+.cat-btn.on{background:var(--pri);border-color:var(--pri);color:#fff}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.pc{background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:.3s}
+.pc:hover{box-shadow:0 10px 32px rgba(0,0,0,.1);border-color:var(--pri)}
+/* 产品图片区 */
+.pt{height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#f8fafc}
+.pt img{width:100%;height:100%;object-fit:contain;padding:12px;transition:.3s}
+.pc:hover .pt img{transform:scale(1.04)}
+.pt-placeholder{width:105px;height:105px;opacity:.35}
+.pbadge{position:absolute;top:11px;left:11px;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:5px;color:#fff;z-index:1}
+/* 产品信息 */
+.pi{padding:16px 18px 0}
+.pn{font-size:.97rem;font-weight:700;color:var(--dark);margin-bottom:7px;line-height:1.35}
+.pd{font-size:.82rem;color:var(--gray);line-height:1.65;margin-bottom:10px}
+.ps{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.stag{font-size:.7rem;font-weight:600;padding:3px 8px;background:var(--light);border:1px solid var(--border);border-radius:5px;color:#555}
+/* 型号切换按钮 */
+.model-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--light);border:none;border-top:1px solid var(--border);padding:10px 18px;font-size:.82rem;font-weight:600;color:var(--gray);cursor:pointer;transition:.2s}
+.model-toggle:hover{background:var(--pri-light);color:var(--pri)}
+.model-toggle.open{background:var(--pri-light);color:var(--pri)}
+.model-toggle svg{width:14px;height:14px;transition:.3s;flex-shrink:0}
+.model-toggle.open svg{transform:rotate(180deg)}
+/* 型号展开面板 */
+.model-panel{display:none;border-top:1px solid var(--border)}
+.model-panel.open{display:block}
+.model-list{list-style:none;padding:0}
+.model-item{border-bottom:1px solid var(--border);cursor:pointer}
+.model-item:last-child{border-bottom:none}
+.model-row{display:flex;align-items:center;justify-content:space-between;padding:10px 18px;gap:8px;transition:.15s}
+.model-row:hover{background:var(--pri-light)}
+.model-row.active{background:var(--pri-light)}
+.model-no{font-size:.82rem;font-weight:700;color:var(--dark)}
+.model-pw{font-size:.78rem;color:var(--pri);font-weight:600}
+.model-arr{font-size:.75rem;color:var(--gray);transition:.2s}
+.model-item.active .model-arr{color:var(--pri);transform:rotate(90deg)}
+/* 型号详情展开 */
+.model-detail{display:none;padding:14px 18px 16px;background:#fafcff;border-top:1px solid var(--border);gap:14px}
+.model-detail.open{display:flex;flex-wrap:wrap}
+.model-detail-img{width:120px;height:90px;object-fit:contain;border-radius:8px;background:#fff;border:1px solid var(--border);padding:6px;flex-shrink:0}
+.model-detail-img-placeholder{width:120px;height:90px;border-radius:8px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#aaa;flex-shrink:0}
+.model-spec{flex:1;min-width:130px}
+.model-spec table{width:100%;border-collapse:collapse;font-size:.78rem}
+.model-spec td{padding:3px 0;color:#555;vertical-align:top}
+.model-spec td:first-child{font-weight:600;color:var(--dark);width:50%;padding-right:8px}
+.model-inq{display:inline-flex;align-items:center;gap:4px;margin-top:10px;font-size:.78rem;font-weight:700;color:var(--pri);cursor:pointer}
+.model-inq:hover{color:var(--pri-dark)}
+.pl{padding:14px 18px;border-top:1px solid var(--border)}
+.pl a{font-size:.83rem;font-weight:700;color:var(--pri);display:inline-flex;align-items:center;gap:4px}
+.pl a:hover{color:var(--pri-dark)}
+
+/* STATS BAND */
+.stats-band{background:var(--pri);padding:52px 24px}
+.stats-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:32px;text-align:center}
+.stat-n{font-size:2.4rem;font-weight:900;color:#fff;line-height:1}
+.stat-n span{font-size:1.4rem}
+.stat-l{font-size:.8rem;color:rgba(255,255,255,.75);margin-top:6px;font-weight:600;letter-spacing:.5px}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.why-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:28px;transition:.3s}
+.why-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.08);border-color:var(--pri);transform:translateY(-3px)}
+.why-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.why-icon svg{width:24px;height:24px}
+.why-h{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:8px}
+.why-d{font-size:.85rem;color:var(--gray);line-height:1.7}
+
+/* ABOUT */
+#about{background:var(--light)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-cards{display:flex;flex-direction:column;gap:16px}
+.acard{background:#fff;border-radius:var(--r);padding:22px 24px;box-shadow:var(--shadow);display:flex;align-items:flex-start;gap:16px;transition:.3s}
+.acard:hover{transform:translateX(4px);box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.acard-icon{width:44px;height:44px;border-radius:10px;background:var(--pri-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.acard-icon svg{width:22px;height:22px;stroke:var(--pri);fill:none;stroke-width:2}
+.acard-n{font-size:1.35rem;font-weight:900;color:var(--dark)}
+.acard-l{font-size:.78rem;color:var(--gray)}
+.about-text .sec-tag{display:block}
+.about-text p{font-size:.93rem;color:#475569;line-height:1.8;margin-bottom:14px}
+.about-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:20px}
+.about-checks li{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:#374151}
+.about-checks li::before{content:'✓';color:var(--pri);font-weight:900;flex-shrink:0;margin-top:1px}
+
+/* CERTIFICATIONS */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px}
+.cert-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:24px 16px;text-align:center;transition:.3s}
+.cert-card:hover{border-color:var(--pri);box-shadow:0 4px 16px rgba(0,0,0,.07);transform:translateY(-3px)}
+.cert-badge{width:52px;height:52px;border-radius:12px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff}
+.cert-name{font-size:.85rem;font-weight:700;color:var(--dark)}
+.cert-desc{font-size:.72rem;color:var(--gray);margin-top:3px}
+
+/* CONTACT */
+#contact{background:#111}
+.contact-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start}
+.contact-info .sec-tag{color:#ff6666}
+.contact-info .sec-tag::before{background:#cc0000}
+.contact-info .sec-h{color:#fff}
+.contact-info .sec-d{color:rgba(255,255,255,.55);max-width:360px}
+.ci-list{display:flex;flex-direction:column;gap:18px;margin-top:32px}
+.cii{display:flex;align-items:flex-start;gap:14px}
+.cic{width:40px;height:40px;border-radius:10px;background:rgba(204,0,0,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cic svg{width:18px;height:18px;stroke:#cc0000;fill:none;stroke-width:2}
+.cit{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:3px}
+.civ{font-size:.9rem;color:rgba(255,255,255,.85);font-weight:500}
+.contact-form{background:#fff;border-radius:16px;padding:36px 32px}
+.form-h{font-size:1.2rem;font-weight:800;color:var(--dark);margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.form-group label{font-size:.78rem;font-weight:700;color:#475569;letter-spacing:.4px}
+.form-group input,.form-group select,.form-group textarea{border:1.5px solid var(--border);border-radius:8px;padding:10px 13px;font-size:.88rem;font-family:inherit;outline:none;transition:.2s;background:#fff;color:var(--dark);width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--pri);box-shadow:0 0 0 3px rgba(204,0,0,.08)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-check{display:flex;align-items:center;gap:8px;font-size:.83rem;color:#475569;margin-bottom:16px;cursor:pointer}
+.form-check input{width:16px;height:16px;accent-color:var(--pri);cursor:pointer}
+.btn-submit{width:100%;background:var(--pri);color:#fff;padding:13px;border-radius:9px;font-size:.95rem;font-weight:700;border:none;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-submit:hover{background:var(--pri-dark);transform:translateY(-1px);box-shadow:0 6px 18px rgba(200,0,0,.35)}
+.toast{position:fixed;bottom:28px;right:28px;background:#1a1a1a;color:#fff;padding:14px 22px;border-radius:10px;font-size:.88rem;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.3);transform:translateY(80px);opacity:0;transition:.4s;z-index:9999;display:flex;align-items:center;gap:8px}
+.toast.show{transform:translateY(0);opacity:1}
+.toast::before{content:'✓';background:var(--pri);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0}
+
+/* FOOTER */
+footer{background:#0d0d0d;padding:56px 24px 24px}
+.fg{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.fbrand{}
+.fbrand .fb-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.fbrand .fb-brand{font-size:1.3rem;font-weight:900;color:#fff;letter-spacing:.5px}
+.fbrand p{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.75;max-width:270px}
+.fsoc{display:flex;gap:8px;margin-top:16px}
+.fsb{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s}
+.fsb:hover{background:var(--pri)}
+.fsb svg{width:16px;height:16px;fill:rgba(255,255,255,.6)}
+.fc h4{font-size:.85rem;font-weight:700;color:#fff;margin-bottom:14px;text-transform:uppercase;letter-spacing:.8px}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fc ul li a{font-size:.82rem;color:rgba(255,255,255,.45);transition:.2s}
+.fc ul li a:hover{color:#fff;padding-left:4px}
+.fbot{max-width:1280px;margin:0 auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fbot span{font-size:.76rem;color:rgba(255,255,255,.3)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.vis{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-in{grid-template-columns:1fr;gap:40px;padding:60px 24px}
+  .hero-vis{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .contact-in{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links,.nav-actions .btn-inq{display:none}
+  .hmb{display:flex}
+  .hero h1{font-size:1.8rem}
+  .form-row{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr}
+  .stats-in{grid-template-columns:repeat(2,1fr)}
+  .logo-brand{font-size:1.3rem}
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="tb-left">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      <span data-i="topbar.phone"></span>
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <span data-i="topbar.email"></span>
+    </span>
+  </div>
+  <button class="lang-btn" id="langBtn" onclick="toggleLang()">
+    <span id="langFlag">🇨🇳</span>
+    <span id="langTxt" data-i="lang.toggle">中文</span>
+  </button>
+</div>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <!-- LOGO: 四格方块图标 + POLEN POWER INVERTER -->
+    <a class="logo" href="#">
+      <svg class="logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <!-- 左上：红色大方块 -->
+        <rect x="1"  y="1"  width="17" height="17" rx="2.5" fill="#cc0000"/>
+        <!-- 右上：红色小方块 -->
+        <rect x="22" y="1"  width="9"  height="9"  rx="2"   fill="#cc0000"/>
+        <!-- 左下：深灰大方块 -->
+        <rect x="1"  y="22" width="24" height="17" rx="2.5" fill="#333333"/>
+        <!-- 右下：红色中方块 -->
+        <rect x="28" y="14" width="11" height="11" rx="2"   fill="#cc0000"/>
+      </svg>
+      <div class="logo-text-group">
+        <div class="logo-brand">POL<em>E</em>N</div>
+        <div class="logo-tagline" data-i="logo.sub">POWER INVERTER</div>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" data-i="nav.home">Home</a></li>
+      <li>
+        <a href="#products" data-i="nav.products">Products ▾</a>
+        <div class="drop">
+          <a href="#products" data-cat="all"><span class="drop-dot"></span><span data-i="nav.p.all">All Products</span></a>
+          <a href="#products" data-cat="pure"><span class="drop-dot"></span><span data-i="nav.p.pure">Pure Sine Wave Inverter</span></a>
+          <a href="#products" data-cat="ups"><span class="drop-dot"></span><span data-i="nav.p.ups">Inverter + Charger + UPS</span></a>
+          <a href="#products" data-cat="mppt"><span class="drop-dot"></span><span data-i="nav.p.mppt">Pure Sine Wave Inverter + MPPT</span></a>
+          <a href="#products" data-cat="mod"><span class="drop-dot"></span><span data-i="nav.p.modified">Modified Sine Wave Inverter</span></a>
+          <a href="#products" data-cat="mod-mppt"><span class="drop-dot"></span><span data-i="nav.p.mod-mppt">Modified Sine Wave Inverter + MPPT</span></a>
+          <a href="#products" data-cat="charger"><span class="drop-dot"></span><span data-i="nav.p.charger">Lead-Acid Battery Charger</span></a>
+        </div>
+      </li>
+      <li><a href="#why" data-i="nav.why">Why Us</a></li>
+      <li><a href="#about" data-i="nav.about">About</a></li>
+      <li><a href="#contact" data-i="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-inq" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i="nav.inquiry">Get Inquiry</button>
+      <div class="hmb" id="hmbBtn" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#home" onclick="toggleMenu()" data-i="nav.home">Home</a>
+  <a href="#products" onclick="toggleMenu()" data-i="nav.products">Products</a>
+  <a href="#why" onclick="toggleMenu()" data-i="nav.why">Why Us</a>
+  <a href="#about" onclick="toggleMenu()" data-i="nav.about">About</a>
+  <a href="#contact" onclick="toggleMenu()" data-i="nav.contact">Contact</a>
+  <a href="#contact" onclick="toggleMenu()" data-i="nav.inquiry" style="color:var(--pri)">Get Inquiry →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-in">
+    <div class="hero-left">
+      <div class="hero-eyebrow" data-i="hero.eyebrow">Professional Inverter Manufacturer Since 2009</div>
+      <h1>
+        <span data-i="hero.h1a">Reliable Power,</span><br>
+        <em data-i="hero.h1b">Inverter</em><br>
+        <span data-i="hero.h1c">Solutions for Global Market</span>
+      </h1>
+      <p class="hero-desc" data-i="hero.desc">Polen Power Inverter specializes in pure sine wave inverters, UPS systems, MPPT solar inverters and PWM controllers — engineered for performance, built for global reliability.</p>
+      <div class="hero-btns">
+        <button class="btn-h1" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})" data-i="hero.btn1">View Products</button>
+        <button class="btn-h2" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i="hero.btn2">Request a Quote</button>
+      </div>
+      <div class="hero-kpis">
+        <div><div class="kpi-n">15<span>+</span></div><div class="kpi-l" data-i="hero.kpi1">Years Experience</div></div>
+        <div><div class="kpi-n">50<span>+</span></div><div class="kpi-l" data-i="hero.kpi2">Countries Exported</div></div>
+        <div><div class="kpi-n">98<span>.6%</span></div><div class="kpi-l" data-i="hero.kpi3">Peak Efficiency</div></div>
+      </div>
+    </div>
+    <div class="hero-vis">
+      <div class="device-box">
+        <div class="device-screen">
+          <svg viewBox="0 0 210 130" xmlns="http://www.w3.org/2000/svg">
+            <rect width="210" height="130" fill="#080808"/>
+            <text x="12" y="22" fill="rgba(255,255,255,.3)" font-size="9" font-family="monospace">OUTPUT MONITOR</text>
+            <!-- Sine wave animation -->
+            <path id="sw" d="" fill="none" stroke="#cc0000" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="12" y1="110" x2="198" y2="110" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+            <line x1="12" y1="65" x2="198" y2="65" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="4,4"/>
+            <text x="12" y="125" fill="rgba(255,255,255,.25)" font-size="8" font-family="monospace">220V / 50Hz</text>
+            <text x="145" y="125" fill="#cc0000" font-size="8" font-family="monospace" font-weight="bold">THD &lt;3%</text>
+          </svg>
+        </div>
+        <div class="device-stats">
+          <div><div class="ds-val" data-i="dev.eff">Efficiency</div><div class="ds-key">98.6%</div></div>
+          <div><div class="ds-val">OUTPUT</div><div class="ds-key">220V AC</div></div>
+          <div><div class="ds-val" data-i="dev.sine">Sine Wave</div><div class="ds-key">Pure</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="si">
+    <div class="sh c reveal">
+      <div class="sec-tag" data-i="sec.products">Product Range</div>
+      <h2 class="sec-h" data-i="products.h">5 Series to Meet Every Application</h2>
+      <p class="sec-d" data-i="products.d">From residential off-grid to commercial critical power, our complete range covers 300W to 10000W across all major applications.</p>
+    </div>
+    <div class="cat-row reveal">
+      <button class="cat-btn on" data-cat="all" data-i="nav.p.all">All Products</button>
+      <button class="cat-btn" data-cat="pure" data-i="nav.p.pure">Pure Sine Wave Inverter</button>
+      <button class="cat-btn" data-cat="ups" data-i="nav.p.ups">Inverter + Charger + UPS</button>
+      <button class="cat-btn" data-cat="mppt" data-i="nav.p.mppt">Pure Sine Wave Inverter + MPPT</button>
+      <button class="cat-btn" data-cat="mod" data-i="nav.p.modified">Modified Sine Wave Inverter</button>
+      <button class="cat-btn" data-cat="mod-mppt" data-i="nav.p.mod-mppt">Modified Sine Wave Inverter + MPPT</button>
+      <button class="cat-btn" data-cat="charger" data-i="nav.p.charger">Lead-Acid Battery Charger</button>
+    </div>
+    <div class="pg" id="prodGrid">
+      <!-- 产品卡片由 JS 根据 PRODUCTS 数据动态生成 -->
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stats-in">
+    <div class="reveal"><div class="stat-n" id="s1">98<span>%</span></div><div class="stat-l" data-i="stat1">Peak Efficiency</div></div>
+    <div class="reveal"><div class="stat-n" id="s2">50<span>+</span></div><div class="stat-l" data-i="stat2">Countries Served</div></div>
+    <div class="reveal"><div class="stat-n" id="s3">100K<span>+</span></div><div class="stat-l" data-i="stat3">Units Installed</div></div>
+    <div class="reveal"><div class="stat-n" id="s4">15<span>+</span></div><div class="stat-l" data-i="stat4">Years Experience</div></div>
+    <div class="reveal"><div class="stat-n">5<span>Y</span></div><div class="stat-l" data-i="stat5">Year Warranty</div></div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="si">
+    <div class="sh c reveal">
+      <div class="sec-tag" data-i="sec.why">Why Choose Us</div>
+      <h2 class="sec-h" data-i="why.h">Your Trusted Inverter Partner</h2>
+      <p class="sec-d" data-i="why.d">15 years of R&amp;D and manufacturing expertise, backed by international certifications and a global after-sales network.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon" style="background:#fff0f0"><svg viewBox="0 0 24 24" fill="none" stroke="#cc0000" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="why-h" data-i="w1.h">High Conversion Efficiency</div>
+        <div class="why-d" data-i="w1.d">Up to 98.6% peak efficiency.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon" style="background:#f0f0ff"><svg viewBox="0 0 24 24" fill="none" stroke="#4444cc" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <div class="why-h" data-i="w2.h">International Certifications</div>
+        <div class="why-d" data-i="w2.d">CE, TÜV, RoHS, FCC and more.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon" style="background:#fff8e0"><svg viewBox="0 0 24 24" fill="none" stroke="#cc8800" stroke-width="2"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="why-h" data-i="w3.h">OEM / ODM Services</div>
+        <div class="why-d" data-i="w3.d">Full OEM &amp; ODM with custom branding and flexible MOQ.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon" style="background:#e8f8f0"><svg viewBox="0 0 24 24" fill="none" stroke="#009966" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <div class="why-h" data-i="w4.h">Global Export Experience</div>
+        <div class="why-d" data-i="w4.d">50+ countries served worldwide.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon" style="background:#f5f0ff"><svg viewBox="0 0 24 24" fill="none" stroke="#7722cc" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+        <div class="why-h" data-i="w5.h">5-Year Warranty &amp; Support</div>
+        <div class="why-d" data-i="w5.d">Industry-leading 5-year warranty with 24/7 technical support.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon" style="background:#fff0f0"><svg viewBox="0 0 24 24" fill="none" stroke="#cc0000" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
+        <div class="why-h" data-i="w6.h">Modern Smart Factory</div>
+        <div class="why-d" data-i="w6.d">30,000 m² facility with automated SMT lines and ISO 9001.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="si">
+    <div class="about-grid">
+      <div class="about-cards">
+        <div class="acard reveal">
+          <div class="acard-icon"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <div><div class="acard-n">15+</div><div class="acard-l" data-i="hero.kpi1">Years Experience</div></div>
+        </div>
+        <div class="acard reveal">
+          <div class="acard-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+          <div><div class="acard-n">50+</div><div class="acard-l" data-i="hero.kpi2">Countries Exported</div></div>
+        </div>
+        <div class="acard reveal">
+          <div class="acard-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+          <div><div class="acard-n">200+</div><div class="acard-l">Employees</div></div>
+        </div>
+        <div class="acard reveal">
+          <div class="acard-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <div><div class="acard-n">30K</div><div class="acard-l">m² Factory</div></div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="sec-tag" data-i="sec.about">About Us</div>
+        <h2 class="sec-h" data-i="about.h">Powering the World's Off-Grid Needs</h2>
+        <p data-i="about.d1">Polen Power Inverter Co., Ltd., founded in 2009, is a high-tech enterprise dedicated to R&D, manufacture and export of power inverters and solar controllers.</p>
+        <p data-i="about.d2">We offer complete OEM/ODM solutions — from circuit design to final packaging — making us the preferred partner for global distributors and brands.</p>
+        <ul class="about-checks">
+          <li data-i="ab.box.p1">Our 30,000 m² factory houses 200+ employees.</li>
+          <li data-i="ab.box.p2">Products cover 300W–10000W in 50+ countries.</li>
+          <li data-i="w2.d">CE, TÜV, RoHS, FCC and more certifications.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" style="background:var(--light);padding:60px 24px">
+  <div class="si">
+    <div class="sh c reveal">
+      <div class="sec-tag" data-i="sec.cert">Certifications</div>
+      <h2 class="sec-h" data-i="cert.h">Internationally Recognized Quality</h2>
+      <p class="sec-d" data-i="cert.d">Our products hold major certifications required by Europe, North America and other key markets.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card reveal"><div class="cert-badge" style="background:#003087">CE</div><div class="cert-name">CE Mark</div><div class="cert-desc">European Conformity</div></div>
+      <div class="cert-card reveal"><div class="cert-badge" style="background:#cc0000">TÜV</div><div class="cert-name">TÜV Certified</div><div class="cert-desc">German Safety</div></div>
+      <div class="cert-card reveal"><div class="cert-badge" style="background:#006633">RoHS</div><div class="cert-name">RoHS</div><div class="cert-desc">EU Directive</div></div>
+      <div class="cert-card reveal"><div class="cert-badge" style="background:#cc0000">FCC</div><div class="cert-name">FCC</div><div class="cert-desc">USA &amp; Canada</div></div>
+      <div class="cert-card reveal"><div class="cert-badge" style="background:#003366">IEC</div><div class="cert-name">IEC 62109</div><div class="cert-desc">International Standard</div></div>
+      <div class="cert-card reveal"><div class="cert-badge" style="background:#336600">ISO</div><div class="cert-name">ISO 9001</div><div class="cert-desc">Quality Management</div></div>
+      <div class="cert-card reveal"><div class="cert-badge" style="background:#cc6600">SAA</div><div class="cert-name">SAA</div><div class="cert-desc">Australia</div></div>
+      <div class="cert-card reveal"><div class="cert-badge" style="background:#660066">UN38.3</div><div class="cert-name">UN38.3</div><div class="cert-desc">Battery Transport</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-in">
+    <div class="contact-info reveal">
+      <div class="sec-tag" data-i="sec.contact">Contact Us</div>
+      <h2 class="sec-h" data-i="contact.h">Ready to Start Your Order?</h2>
+      <p class="sec-d" data-i="contact.d">Send us your requirements and our sales team will respond within 24 hours.</p>
+      <div class="ci-list">
+        <div class="cii"><div class="cic"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div><div><div class="cit" data-i="ci.phone">PHONE / WHATSAPP</div><div class="civ" data-i="ci.phone.val">+8613047068661</div></div></div>
+        <div class="cii"><div class="cic"><svg viewBox="0 0 24 24"><path d="M21 2H3a1 1 0 00-1 1v12a1 1 0 001 1h4v4l5-4h9a1 1 0 001-1V3a1 1 0 00-1-1z"/></svg></div><div><div class="cit" data-i="ci.wechat">WECHAT</div><div class="civ" data-i="ci.wechat.val">+8613047068661</div></div></div>
+        <div class="cii"><div class="cic"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><div class="cit" data-i="ci.email">EMAIL</div><div class="civ">zezeshao123@gmail.com</div></div></div>
+        <div class="cii"><div class="cic"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div><div class="cit" data-i="ci.addr">ADDRESS</div><div class="civ" data-i="ci.addr.val">Room 039, 6/F, Block A, Jushoumei Mall, No.189 Foshan Ave, Nanhai District, Foshan, Guangdong, China</div></div></div>
+        <div class="cii"><div class="cic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="cit" data-i="ci.hours">BUSINESS HOURS</div><div class="civ" data-i="ci.hours.val">Mon – Sat  08:30 – 21:00  (GMT+8)</div></div></div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-h" data-i="cf.h">Send an Inquiry</div>
+      <form id="contactForm" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i="cf.name">Your Name *</label>
+            <input type="text" id="fname" required data-ph="cf.ph.name" placeholder="Full Name"/>
+          </div>
+          <div class="form-group">
+            <label data-i="cf.company">Company</label>
+            <input type="text" id="fcompany" data-ph="cf.ph.company" placeholder="Company Name"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i="cf.email">Email *</label>
+            <input type="email" id="femail" required placeholder="email@company.com"/>
+          </div>
+          <div class="form-group">
+            <label data-i="cf.phone">Phone / WhatsApp</label>
+            <input type="tel" id="fphone" data-ph="cf.ph.phone" placeholder="Phone or WhatsApp"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-i="cf.product">Product of Interest</label>
+          <select id="fproduct">
+            <option value="" data-i="cf.product.ph">-- Select Product --</option>
+            <option>PS-S Series Pure Sine Wave Inverter</option>
+            <option>PS-U Series Inverter / Charger / UPS</option>
+            <option>PS-M Series Pure Sine Wave Inverter + MPPT</option>
+            <option>PS-R Series Modified Sine Wave Inverter</option>
+            <option>PS-RM Series Modified Sine Wave Inverter + MPPT</option>
+            <option>PS-C Series Lead-Acid Battery Charger</option>
+            <option>Custom / OEM / ODM</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i="cf.msg">Message *</label>
+          <textarea id="fmsg" required data-ph="cf.ph.msg" placeholder="Please describe your requirements: wattage, input voltage, quantity, application, etc."></textarea>
+        </div>
+        <label class="form-check">
+          <input type="checkbox" id="foem"/>
+          <span data-i="cf.oem">OEM / ODM Service</span>
+        </label>
+        <button type="submit" class="btn-submit" data-i="cf.submit">Send Inquiry →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg">
+    <div class="fbrand">
+      <div class="fb-logo">
+        <svg width="32" height="32" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1"  y="1"  width="17" height="17" rx="2.5" fill="#cc0000"/>
+          <rect x="22" y="1"  width="9"  height="9"  rx="2"   fill="#cc0000"/>
+          <rect x="1"  y="22" width="24" height="17" rx="2.5" fill="#555"/>
+          <rect x="28" y="14" width="11" height="11" rx="2"   fill="#cc0000"/>
+        </svg>
+        <span class="fb-brand">POLEN</span>
+      </div>
+      <p data-i="footer.desc">Professional inverter manufacturer since 2009. Supplying pure sine wave inverters, UPS, MPPT solar inverters and lead-acid battery chargers to 50+ countries worldwide.</p>
+      <div class="fsoc">
+        <div class="fsb"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></div>
+        <div class="fsb"><svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></div>
+        <div class="fsb"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+      </div>
+    </div>
+    <div class="fc">
+      <h4 data-i="footer.products">Products</h4>
+      <ul>
+        <li><a href="#products">Pure Sine Wave Inverter</a></li>
+        <li><a href="#products">Inverter + Charger + UPS</a></li>
+        <li><a href="#products">Pure Sine Wave Inverter + MPPT</a></li>
+        <li><a href="#products">Modified Sine Wave Inverter</a></li>
+        <li><a href="#products">Modified Sine Wave Inverter + MPPT</a></li>
+        <li><a href="#products">Lead-Acid Battery Charger</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4 data-i="footer.company">Company</h4>
+      <ul>
+        <li><a href="#about" data-i="footer.about">About Us</a></li>
+        <li><a href="#why" data-i="footer.why">Why Us</a></li>
+        <li><a href="#certifications" data-i="footer.certs">Certifications</a></li>
+        <li><a href="#contact" data-i="footer.oem">OEM / ODM</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4 data-i="footer.contact">Contact</h4>
+      <ul>
+        <li><a href="tel:+8613047068661">+8613047068661</a></li>
+        <li><a href="mailto:zezeshao123@gmail.com">zezeshao123@gmail.com</a></li>
+        <li><a href="#contact" data-i="footer.inquiry">Send Inquiry</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Polen Power Inverter Co., Ltd. All Rights Reserved.</span>
+    <span id="ftIcp" data-i="footer.icp"></span>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="i18n.js"></script>
+<script>
+/* ── Language ── */
+let lang = 'en';
+function applyLang(l) {
+  lang = l;
+  const d = I18N[l];
+  document.querySelectorAll('[data-i]').forEach(el => {
+    const k = el.getAttribute('data-i');
+    if (d[k] !== undefined) el.innerHTML = d[k];
+  });
+  document.querySelectorAll('[data-ph]').forEach(el => {
+    const k = el.getAttribute('data-ph');
+    if (d[k] !== undefined) el.placeholder = d[k];
+  });
+  document.documentElement.lang = l;
+  document.getElementById('langFlag').textContent = d['lang.flag'] || '';
+  document.getElementById('langTxt').textContent = d['lang.toggle'] || '';
+  renderProducts(l);
+}
+function toggleLang() { applyLang(lang === 'en' ? 'zh' : 'en'); }
+
+/* ── 渲染产品卡片 ── */
+function renderProducts(l) {
+  const grid = document.getElementById('prodGrid');
+  const inquireLabel = l === 'zh' ? '咨询报价 →' : 'Inquire Now →';
+  const modelsLabel  = l === 'zh' ? '查看型号' : 'View Models';
+  const collapseLabel= l === 'zh' ? '收起型号' : 'Collapse';
+  const inputLabel   = l === 'zh' ? '输入' : 'Input';
+  const outputLabel  = l === 'zh' ? '输出' : 'Output';
+  const powerLabel   = l === 'zh' ? '功率' : 'Power';
+  const inquireNow   = l === 'zh' ? '咨询此型号 →' : 'Inquire This Model →';
+  const noImg        = l === 'zh' ? '图片待上传' : 'Image Pending';
+
+  grid.innerHTML = PRODUCTS.map(p => {
+    const name = p.name[l];
+    const desc = p.desc[l];
+    const badge = p.badge[l];
+
+    const imgHtml = `<img src="${p.img}" alt="${name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy">
+      <div class="pt-placeholder" style="display:none;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;color:#aaa;font-size:.75rem;gap:8px">
+        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        ${noImg}
+      </div>`;
+
+    const modelsHtml = p.models.map((m, mi) => {
+      const mImgHtml = `<img class="model-detail-img" src="${m.img}" alt="${m.model}"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="model-detail-img-placeholder" style="display:none">${noImg}</div>`;
+      return `
+      <li class="model-item">
+        <div class="model-row" onclick="toggleModel(this)">
+          <span class="model-no">${m.model}</span>
+          <span class="model-pw">${m.power}</span>
+          <span class="model-arr">▶</span>
+        </div>
+        <div class="model-detail">
+          ${mImgHtml}
+          <div class="model-spec">
+            <table>
+              <tr><td>${powerLabel}</td><td>${m.power}</td></tr>
+              <tr><td>${inputLabel}</td><td>${m.input}</td></tr>
+              <tr><td>${outputLabel}</td><td>${m.output}</td></tr>
+            </table>
+            <a class="model-inq" href="#contact" onclick="prefillProduct('${name} - ${m.model}')">${inquireNow}</a>
+          </div>
+        </div>
+      </li>`;
+    }).join('');
+
+    return `
+    <div class="pc reveal" data-cat="${p.id}" style="position:relative">
+      <div class="pt" style="background:#f8fafc">${imgHtml}</div>
+      <span class="pbadge" style="background:${p.badgeColor}">${badge}</span>
+      <div class="pi">
+        <div class="pn">${name}</div>
+        <div class="pd">${desc}</div>
+        <div class="ps">${p.tags.map(t=>`<span class="stag">${t}</span>`).join('')}</div>
+      </div>
+      <button class="model-toggle" onclick="togglePanel(this)">
+        <span class="mt-label">${modelsLabel} (${p.models.length})</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="model-panel">
+        <ul class="model-list">${modelsHtml}</ul>
+      </div>
+      <div class="pl"><a href="#contact" onclick="prefillProduct('${name}')">${inquireLabel}</a></div>
+    </div>`;
+  }).join('');
+
+  // 重新绑定分类筛选
+  bindFilter();
+  // 重新触发 reveal
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+}
+
+function togglePanel(btn) {
+  btn.classList.toggle('open');
+  const panel = btn.nextElementSibling;
+  panel.classList.toggle('open');
+  const label = btn.querySelector('.mt-label');
+  const isOpen = btn.classList.contains('open');
+  const l = lang;
+  label.textContent = isOpen
+    ? (l==='zh' ? `收起型号` : `Collapse`)
+    : (l==='zh' ? `查看型号 (${btn.closest('.pc').querySelectorAll('.model-item').length})` : `View Models (${btn.closest('.pc').querySelectorAll('.model-item').length})`);
+}
+
+function toggleModel(row) {
+  const item = row.parentElement;
+  const detail = item.querySelector('.model-detail');
+  const isOpen = detail.classList.contains('open');
+  // 关闭同列表其他展开项
+  const list = item.parentElement;
+  list.querySelectorAll('.model-detail.open').forEach(d => d.classList.remove('open'));
+  list.querySelectorAll('.model-item.active').forEach(i => i.classList.remove('active'));
+  list.querySelectorAll('.model-row.active').forEach(r => r.classList.remove('active'));
+  if (!isOpen) {
+    detail.classList.add('open');
+    item.classList.add('active');
+    row.classList.add('active');
+  }
+}
+
+function prefillProduct(name) {
+  setTimeout(() => {
+    const sel = document.getElementById('fproduct');
+    if (sel) {
+      for (let opt of sel.options) {
+        if (opt.text.includes(name.split(' - ')[0].substring(0,8))) { sel.value = opt.value; break; }
+      }
+    }
+  }, 400);
+}
+
+/* ── 分类筛选 ── */
+function bindFilter() {
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.onclick = () => {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      const cat = btn.dataset.cat;
+      document.querySelectorAll('.pc').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+      });
+    };
+  });
+  document.querySelectorAll('.drop a[data-cat]').forEach(a => {
+    a.onclick = () => {
+      const cat = a.dataset.cat;
+      setTimeout(() => {
+        document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('on', b.dataset.cat === cat));
+        document.querySelectorAll('.pc').forEach(card => {
+          card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+        });
+      }, 400);
+    };
+  });
+}
+
+/* ── Mobile menu ── */
+function toggleMenu() {
+  const m = document.getElementById('mobMenu');
+  m.classList.toggle('open');
+}
+
+/* ── Sine wave animation ── */
+let phase = 0;
+function drawSine() {
+  const path = document.getElementById('sw');
+  if (!path) return;
+  let d = 'M12,65 ';
+  for (let x = 12; x <= 198; x += 2) {
+    const y = 65 - 28 * Math.sin((x - 12) / 22 + phase);
+    d += `L${x},${y.toFixed(1)} `;
+  }
+  path.setAttribute('d', d);
+  phase += 0.06;
+  requestAnimationFrame(drawSine);
+}
+drawSine();
+
+/* ── Scroll reveal ── */
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); ro.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+/* ── EmailJS init ── */
+emailjs.init('eTToEHncZ1JWctQVv');
+
+/* ── Form submit ── */
+function submitForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  const params = {
+    from_name: document.getElementById('fname').value.trim(),
+    company:   document.getElementById('fcompany').value.trim() || '-',
+    reply_to:  document.getElementById('femail').value.trim(),
+    phone:     document.getElementById('fphone').value.trim() || '-',
+    product:   document.getElementById('fproduct').value || '-',
+    oem:       document.getElementById('foem').checked ? 'Yes' : 'No',
+    message:   document.getElementById('fmsg').value.trim(),
+  };
+
+  emailjs.send('service_8fynkgm', 'template_j559hkc', params)
+    .then(() => {
+      const toast = document.getElementById('toast');
+      toast.textContent = I18N[lang]['toast.ok'] || 'Inquiry sent successfully!';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+      e.target.reset();
+    })
+    .catch((err) => {
+      alert('Failed to send. Please email us directly at zezeshao123@gmail.com\n\nError: ' + JSON.stringify(err));
+    })
+    .finally(() => {
+      btn.disabled = false;
+      btn.setAttribute('data-i', 'cf.submit');
+      btn.textContent = (I18N[lang] && I18N[lang]['cf.submit']) || 'Send Inquiry →';
+    });
+}
+
+/* Init */
+applyLang('en');
+</script>
+</body>
+</html>
